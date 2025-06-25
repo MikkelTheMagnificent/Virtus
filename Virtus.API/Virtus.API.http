@@ -1,0 +1,6 @@
+@Virtus.API_HostAddress = http://localhost:5073
+
+GET {{Virtus.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
