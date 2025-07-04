@@ -8,10 +8,13 @@ builder.Services.AddOpenApi();
 
 // Services
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IWorkoutService, WorkoutService>();
 
 
 // Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IWorkoutRepository, WorkoutRepository>();
+
 builder.Services.AddControllers();
 
 var app = builder.Build();
