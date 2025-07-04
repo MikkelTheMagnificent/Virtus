@@ -37,3 +37,4 @@ C:\Users\Chefen\OneDrive\Dokumenter\Virtus\Virtus.API\obj\Debug\net9.0\refint\Vi
 C:\Users\Chefen\OneDrive\Dokumenter\Virtus\Virtus.API\obj\Debug\net9.0\Virtus.API.pdb
 C:\Users\Chefen\OneDrive\Dokumenter\Virtus\Virtus.API\obj\Debug\net9.0\Virtus.API.genruntimeconfig.cache
 C:\Users\Chefen\OneDrive\Dokumenter\Virtus\Virtus.API\obj\Debug\net9.0\ref\Virtus.API.dll
+C:\Users\Chefen\OneDrive\Dokumenter\Virtus\Virtus.API\obj\Debug\net9.0\Virtus.API.sourcelink.json

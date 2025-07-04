@@ -1,11 +1,17 @@
 using Virtus.API.Interfaces;
 using Virtus.API.Repositories;
+using Virtus.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
 
-builder.Services.AddSingleton<IUserRepository, UserRepository>();
+// Services
+builder.Services.AddScoped<IUserService, UserService>();
+
+
+// Repositories
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddControllers();
 
 var app = builder.Build();
@@ -19,3 +25,4 @@ app.MapControllers();
 app.UseHttpsRedirection();
 
 app.Run();
+
