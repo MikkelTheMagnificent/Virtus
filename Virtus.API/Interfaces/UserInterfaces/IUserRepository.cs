@@ -1,3 +1,4 @@
+using MongoDB.Driver;
 using Virtus.API.Models;
 
 namespace Virtus.API.Interfaces
@@ -8,6 +9,7 @@ namespace Virtus.API.Interfaces
         Task<User?> GetUserByIdAsync(string Id);
         Task CreateUserAsync(User user);
         Task UpdateUserAsync(User user);
+        Task UpdateUserAsync(FilterDefinition<User> filter, UpdateDefinition<User> update);
         Task DeleteUserAsync(string Id);
     }
 }

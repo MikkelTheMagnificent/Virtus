@@ -39,14 +39,14 @@ namespace Virtus.API.Controllers
 
 
         [HttpPost("createWorkout")]
-        public async Task<IActionResult> CreateWorkout([FromBody] Workout workout)
+        public async Task<IActionResult> CreateWorkout([FromBody] Workout workout, string userId)
         {
             if (workout == null)
             {
                 return BadRequest("Workout cannot be null");
             }
 
-            await _workoutService.CreateWorkoutAsync(workout);
+            await _workoutService.CreateWorkoutAsync(userId, workout);
             return CreatedAtAction(nameof(GetWorkoutById), new { id = workout.Id }, workout);
         }
 

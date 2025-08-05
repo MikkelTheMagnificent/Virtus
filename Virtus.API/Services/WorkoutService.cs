@@ -9,10 +9,12 @@ namespace Virtus.API.Services;
 public class WorkoutService : IWorkoutService
 {
     private readonly IWorkoutRepository _workoutRepository;
+    private readonly IUserRepository _userRepository;
 
-    public WorkoutService(IWorkoutRepository workoutRepository)
+    public WorkoutService(IWorkoutRepository workoutRepository, IUserRepository userRepository)
     {
         _workoutRepository = workoutRepository;
+        _userRepository = userRepository;
     }
 
     public async Task<IEnumerable<WorkoutDto>> GetWorkoutsByUserAsync(string userId)
@@ -51,24 +53,17 @@ public class WorkoutService : IWorkoutService
         };
     }
 
-    public async Task CreateWorkoutAsync(Workout dto)
+    public async Task<Workout> CreateWorkoutAsync(string userId, Workout workout)
     {
-        var workout = new Workout
-        {
-            Id = Guid.NewGuid().ToString(),
-            UserId = dto.UserId,
-            Name = dto.Name,
-            Date = dto.Date,
-            Exercises = dto.Exercises.Select(e => new Exercise
-            {
-                Name = e.Name,
-                Sets = e.Sets,
-                Reps = e.Reps,
-                Weight = e.Weight
-            }).ToList()
-        };
+        workout.UserId = userId;
+        await _workoutRepository.CreateWorkoutAsync(userId, workout);
 
-        await _workoutRepository.CreateWorkoutAsync(workout);
+        var filter = Builders<User>.Filter.Eq(u => u.Id, userId);
+        var update = Builders<User>.Update.Push(u => u.WorkoutIds, workout.Id);
+
+        await _userRepository.UpdateUserAsync(filter, update);
+
+        return workout;
     }
 
 

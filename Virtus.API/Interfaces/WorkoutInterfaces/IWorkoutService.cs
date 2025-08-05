@@ -7,7 +7,7 @@ namespace Virtus.API.Interfaces
     {
         Task<IEnumerable<WorkoutDto>> GetWorkoutsByUserAsync(string userId);
         Task<WorkoutDto> GetWorkoutByIdAsync(string id);
-        Task CreateWorkoutAsync(Workout workout);
+        Task<Workout> CreateWorkoutAsync(string userId, Workout workout);
         Task UpdateWorkoutAsync(Workout workout);
         Task DeleteWorkoutAsync(string id);
     }

@@ -33,8 +33,9 @@ public class WorkoutRepository : IWorkoutRepository
         }
 
 
-        public async Task CreateWorkoutAsync(Workout workout)
+        public async Task CreateWorkoutAsync(string userId, Workout workout)
         {
+            workout.UserId = userId;
             await _workouts.InsertOneAsync(workout);
         }
 

@@ -1,3 +1,5 @@
+using MongoDB.Bson.Serialization.Attributes;
+
 namespace Virtus.API.Models
 {
     public class User
@@ -7,5 +9,8 @@ namespace Virtus.API.Models
         public string Email { get; set; }
 
         public List<string> FollowingUserIds { get; set; } = new List<string>();
+        
+        [BsonElement("workoutIds")]
+        public List<string> WorkoutIds { get; set; } = new();
     }
 }

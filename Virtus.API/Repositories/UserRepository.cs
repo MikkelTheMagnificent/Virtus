@@ -36,10 +36,15 @@ namespace Virtus.API.Repositories
             await _users.InsertOneAsync(user);
         }
 
-
         public async Task UpdateUserAsync(User user)
         {
             await _users.ReplaceOneAsync(u => u.Id == user.Id, user);
+        }
+
+
+        public async Task UpdateUserAsync(FilterDefinition<User> filter, UpdateDefinition<User> update)
+        {
+            await _users.UpdateOneAsync(filter, update);
         }
 
 
