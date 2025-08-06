@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Virtus.API.props" />
+</Project>
