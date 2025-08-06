@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Virtus.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6aad4c60bb6545fa736f1a9e44dd61a1f5310cc0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5ca8aba05a6071b7e5837959081bed47903ce1d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Virtus.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Virtus.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
