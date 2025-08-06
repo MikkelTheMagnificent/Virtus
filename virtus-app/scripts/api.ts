@@ -2,7 +2,7 @@ import { WorkoutDTO } from "../constants/WorkoutDTO";
 
 const BASE_URL = "http://localhost:5073/api"; // Husk at ændre til din IP ved mobiltest
 
-export async function createWorkout(userId: string, workoutData: any) {
+export async function startWorkout(userId: string, workoutData: any) {
   const response = await fetch(`http://localhost:5073/api/workouts/${userId}`, {
     method: 'POST',
     headers: {
