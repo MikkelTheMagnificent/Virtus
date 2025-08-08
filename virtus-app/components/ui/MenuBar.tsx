@@ -1,31 +1,28 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, useWindowDimensions } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 
 export default function MenuBar() {
   const router = useRouter();
-  const navigate = (path: string) => {
-    router.push(path as any);
-  };
+  const navigate = (path: string) => router.replace(path as any); // undgå back-stack af menuklik
 
   const menuItems = [
-  { label: 'Home', path: '/' },
-  { label: 'Templates', path: '/templates' },
-  { label: 'Statistics', path: '/statistics' },
-  { label: 'Diet', path: '/(tabs)/diet' },
-];
-
+    { label: 'Home', path: '/' },
+    { label: 'Templates', path: '/templates' },
+    { label: 'Statistics', path: '/statistics' },
+    { label: 'Diet', path: '/(tabs)/diet' },
+  ];
 
   return (
     <View style={styles.menuBar}>
       <View style={styles.leftMenu}>
         {menuItems.map((item) => (
-  <TouchableOpacity key={item.label} onPress={() => navigate(item.path)}>
-    <Text style={styles.menuItem}>{item.label}</Text>
-  </TouchableOpacity>
-))}
-
+          <TouchableOpacity key={item.label} onPress={() => navigate(item.path)} style={styles.leftItem}>
+            <Text style={styles.menuItem}>{item.label}</Text>
+          </TouchableOpacity>
+        ))}
       </View>
+
       <TouchableOpacity onPress={() => navigate('/createWorkout')}>
         <Text style={[styles.menuItem, styles.createWorkout]}>Start Workout</Text>
       </TouchableOpacity>
@@ -36,7 +33,7 @@ export default function MenuBar() {
 const styles = StyleSheet.create({
   menuBar: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between', // venstre gruppe og højre knap på samme linje
     alignItems: 'center',
     backgroundColor: '#111',
     paddingHorizontal: 16,
@@ -48,14 +45,23 @@ const styles = StyleSheet.create({
   },
   leftMenu: {
     flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,                         // fyld vandret plads
+    marginRight: 12,
+    justifyContent: 'space-evenly',  // lige afstand mellem punkter
+  },
+  leftItem: {
+    paddingHorizontal: 4,
+    paddingVertical: 2,
   },
   menuItem: {
     color: '#fff',
     fontSize: 16,
-    marginRight: 12,
+    textAlign: 'center',
   },
   createWorkout: {
     fontWeight: 'bold',
     color: '#00ffff',
+    marginLeft: 12,
   },
 });
