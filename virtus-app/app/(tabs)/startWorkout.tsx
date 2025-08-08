@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#2c2c2e',
     width: '40%',
     marginBottom: 12,
+    alignSelf: 'center',
   },
   startButton: {
     backgroundColor: '#0a84ff',
@@ -76,6 +77,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     marginBottom: 20,
+    marginTop: 10,
   },
   startButtonText: {
     color: '#fff',

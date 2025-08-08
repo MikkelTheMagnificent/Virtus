@@ -1,4 +1,3 @@
-// app/(tabs)/_layout.tsx
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { Text } from 'react-native';
@@ -24,13 +23,17 @@ export default function TabsLayout() {
         },
 
         tabBarStyle: {
-          backgroundColor: '#111',
-          height: 100,        
+          backgroundColor: '#1c1c1e',
+          height: 102,
           paddingTop: 12,
-          paddingBottom: 18,    
+          paddingBottom: 15,
           paddingHorizontal: 0,
           borderTopWidth: 0,
-          overflow: 'visible',
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: -2 },
+          shadowOpacity: 0.3,
+          shadowRadius: 4,
+          elevation: 5, 
         },
 
         tabBarIconStyle: {
