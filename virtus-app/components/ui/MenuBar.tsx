@@ -4,7 +4,7 @@ import { useRouter } from 'expo-router';
 
 export default function MenuBar() {
   const router = useRouter();
-  const navigate = (path: string) => router.replace(path as any); // undgå back-stack af menuklik
+  const navigate = (path: string) => router.replace(path as any); 
 
   const menuItems = [
     { label: 'Home', path: '/' },
@@ -33,7 +33,7 @@ export default function MenuBar() {
 const styles = StyleSheet.create({
   menuBar: {
     flexDirection: 'row',
-    justifyContent: 'space-between', // venstre gruppe og højre knap på samme linje
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#111',
     paddingHorizontal: 16,
@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
   leftMenu: {
     flexDirection: 'row',
     alignItems: 'center',
-    flex: 1,                         // fyld vandret plads
+    flex: 1,                       
     marginRight: 12,
-    justifyContent: 'space-evenly',  // lige afstand mellem punkter
+    justifyContent: 'space-evenly', 
   },
   leftItem: {
     paddingHorizontal: 4,

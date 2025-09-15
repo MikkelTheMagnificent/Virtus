@@ -1,3 +1,4 @@
+// app/(tabs)/_layout.tsx
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { Text } from 'react-native';
@@ -16,8 +17,8 @@ export default function TabsLayout() {
         },
 
         tabBarLabelStyle: {
+          fontFamily: 'Cinzel_600SemiBold', // << her
           fontSize: 13,
-          fontWeight: '500',
           textAlign: 'center',
           marginTop: 6,
         },
@@ -33,13 +34,10 @@ export default function TabsLayout() {
           shadowOffset: { width: 0, height: -2 },
           shadowOpacity: 0.3,
           shadowRadius: 4,
-          elevation: 5, 
+          elevation: 5,
         },
 
-        tabBarIconStyle: {
-          marginTop: 2,
-        },
-
+        tabBarIconStyle: { marginTop: 2 },
         tabBarActiveTintColor: '#fff',
         tabBarInactiveTintColor: 'gray',
 
@@ -62,7 +60,6 @@ export default function TabsLayout() {
         options={{
           title: 'Start Workout',
           tabBarItemStyle: { flex: 1.35 },
-
           tabBarIcon: ({ color }) => (
             <Ionicons name="add-circle" size={34} color={color} style={{ marginTop: -3 }} />
           ),
@@ -70,7 +67,7 @@ export default function TabsLayout() {
             <Text
               style={{
                 color,
-                fontWeight: focused ? '600' : '500',
+                fontFamily: 'Cinzel_600SemiBold', // << her også
                 fontSize: 13,
                 textAlign: 'center',
                 width: '100%',

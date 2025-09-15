@@ -18,7 +18,6 @@ export default function BottomTabNavigator() {
       screenOptions={({ route }) => ({
         headerShown: false,
 
-        // Giv alle tabs lige meget plads og centrér indhold
         tabBarItemStyle: {
           flex: 1,
           justifyContent: 'center',
