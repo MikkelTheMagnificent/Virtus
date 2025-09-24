@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList, Dimensions } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
 import TemplateCard from '@/components/ui/TemplateCard';
@@ -17,7 +17,7 @@ const palette = {
 
 // Layout-konstanter
 const SCREEN_WIDTH = Dimensions.get('window').width;
-const H_PADDING = 16; 
+const H_PADDING = 16;
 const SPACING = 16;
 const COLUMNS = 2;
 
@@ -41,15 +41,22 @@ const templates = [ // Dummy data
     image: templateBg,
     exercises: [{ name: 'Exercise 1' }, { name: 'Exercise 2' }, { name: 'Exercise 3' }],
   },
+  {
+    id: '3',
+    title: 'Template Name',
+    date: '2025-09-12',
+    image: templateBg,
+    exercises: [{ name: 'Exercise 1' }, { name: 'Exercise 2' }, { name: 'Exercise 3' }],
+  },
 ];
-
-
-
-
 
 export default function StartWorkoutScreen() {
   const handleStartWorkout = () => console.log('Workout started');
   const handleAddTemplate = () => console.log('Add template');
+  const insets = useSafeAreaInsets();
+
+  const dataWithSpacer =
+    templates.length % COLUMNS ? [...templates, { id: '__spacer__' } as any] : templates;
 
   return (
     <LinearGradient
@@ -74,7 +81,7 @@ export default function StartWorkoutScreen() {
       <View style={styles.templatesHeader}>
         <Text style={styles.TemplateTitle}>Templates</Text>
 
-       <TouchableOpacity
+        <TouchableOpacity
           onPress={handleAddTemplate}
           style={styles.templateAddBtn}
           activeOpacity={0.85}
@@ -91,41 +98,49 @@ export default function StartWorkoutScreen() {
 
       {/* Liste med templates */}
       <FlatList
-        data={templates}
+        data={dataWithSpacer} 
         keyExtractor={(item) => item.id}
         numColumns={COLUMNS}
         contentContainerStyle={{
-          paddingHorizontal: H_PADDING,
-          alignItems: 'center',      
-          justifyContent: 'center',  
-          paddingBottom: 32,         
+          paddingBottom: insets.bottom + 100,
         }}
-        columnWrapperStyle={{ gap: SPACING }}
-        renderItem={({ item }) => (
-          <TemplateCard
-            title={item.title}
-            date={item.date}
-            image={item.image}
-            exercises={item.exercises}
-            width={CARD_WIDTH}
-            height={CARD_HEIGHT}
-            style={{ marginBottom: SPACING }}
-            onPress={() => console.log('open template')}
-            onMorePress={() => console.log('more menu')}
-          />
-        )}
+        columnWrapperStyle={{ justifyContent: 'space-between' }}
+        renderItem={({ item, index }) => {
+          if (item.id === '__spacer__') {
+            return <View style={{ width: CARD_WIDTH, height: CARD_HEIGHT, marginBottom: SPACING }} />;
+          }
+
+          const isLeftCol = index % COLUMNS === 0;
+
+          return (
+            <TemplateCard
+              title={item.title}
+              date={item.date}
+              image={item.image}
+              exercises={item.exercises}
+              width={CARD_WIDTH}
+              height={CARD_HEIGHT}
+              style={{
+                marginBottom: SPACING,
+                marginRight: isLeftCol ? SPACING : 0, 
+              }}
+              onPress={() => console.log('open template')}
+              onMorePress={() => console.log('more menu')}
+            />
+          );
+        }}
+
         showsVerticalScrollIndicator={false}
       />
     </LinearGradient>
   );
 }
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 16,
-    paddingTop: 20, 
+    paddingTop: 20,
   },
 
   sectionTitle: {
@@ -174,13 +189,12 @@ const styles = StyleSheet.create({
   },
 
   separator: {
-  height: 1,
-  backgroundColor: 'rgba(255,255,255,0.25)', 
-  marginVertical: 8, 
-  width: '100%',
-  alignSelf: 'center',
-},
-
+    height: 1,
+    backgroundColor: 'rgba(255,255,255,0.25)',
+    marginVertical: 8,
+    width: '100%',
+    alignSelf: 'center',
+  },
 
   templatesHeader: {
     flexDirection: 'row',

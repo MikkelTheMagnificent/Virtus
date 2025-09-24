@@ -1,4 +1,3 @@
-// app/_layout.tsx
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -41,12 +40,11 @@ export default function RootLayout() {
     if (loaded || error) {
       SplashScreen.hideAsync();
 
-      // Sæt Poppins som GLOBAL default font for <Text />
       const anyText = Text as any;
       anyText.defaultProps = anyText.defaultProps || {};
       anyText.defaultProps.style = [
         anyText.defaultProps.style,
-        { fontFamily: 'Poppins_400Regular' }, // standard brødtekst
+        { fontFamily: 'Poppins_400Regular' }, 
       ];
     }
   }, [loaded, error]);

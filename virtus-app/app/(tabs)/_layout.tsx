@@ -1,7 +1,13 @@
-// app/(tabs)/_layout.tsx
+import React from 'react';
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { Text } from 'react-native';
+import { Text, Platform, View } from 'react-native';
+
+const palette = {
+  gold: '#C89B06',
+  cream: '#F6EED9',
+  tabBg: '#211B12',
+};
 
 export default function TabsLayout() {
   return (
@@ -9,46 +15,96 @@ export default function TabsLayout() {
       initialRouteName="startWorkout"
       screenOptions={({ route }) => ({
         headerShown: false,
+        tabBarHideOnKeyboard: true,
 
-        tabBarItemStyle: {
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
+        tabBarLabel: ({ focused, color }) => {
+          const map: Record<string, string> = {
+            profile: 'Profile',
+            history: 'History',
+            startWorkout: 'Start Workout',
+            statistics: 'Statistics',
+            friends: 'Friends',
+          };
+          const label = map[route.name] ?? route.name;
+
+          return (
+            <Text
+              style={{ color, fontSize: 13, fontWeight: focused ? '600' : '400' }}
+              numberOfLines={1}
+              adjustsFontSizeToFit
+              minimumFontScale={0.8}
+            >
+              {label}
+            </Text>
+          );
         },
 
-        tabBarLabelStyle: {
-          fontFamily: 'Cinzel_600SemiBold', // << her
-          fontSize: 13,
-          textAlign: 'center',
-          marginTop: 6,
+        tabBarIcon: ({ color, focused }) => {
+          let name: keyof typeof Ionicons.glyphMap;
+          switch (route.name) {
+            case 'profile':
+              name = focused ? 'person' : 'person-outline';
+              return <Ionicons name={name} size={22} color={color} />;
+            case 'history':
+              name = focused ? 'time' : 'time-outline';
+              return <Ionicons name={name} size={22} color={color} />;
+            case 'statistics':
+              name = focused ? 'bar-chart' : 'bar-chart-outline';
+              return <Ionicons name={name} size={22} color={color} />;
+            case 'friends':
+              name = focused ? 'people' : 'people-outline';
+              return <Ionicons name={name} size={22} color={color} />;
+            case 'startWorkout':
+              return (
+                <View
+                  style={{
+                    width: 30,
+                    height: 30,
+                    borderRadius: 20,
+                    marginBottom: 4,
+                    backgroundColor: focused ? palette.gold : '#2A2219',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Ionicons
+                    name="add"
+                    size={24}
+                    color={focused ? palette.tabBg : palette.cream}
+                  />
+                </View>
+              );
+            default:
+              return <Ionicons name="ellipse" size={22} color={color} />;
+          }
         },
+
+        tabBarActiveTintColor: palette.gold,
+        tabBarInactiveTintColor: palette.cream,
 
         tabBarStyle: {
-          backgroundColor: '#1c1c1e',
-          height: 102,
-          paddingTop: 12,
-          paddingBottom: 15,
-          paddingHorizontal: 0,
+          position: 'absolute',
+          width: '95%',
+          bottom: Platform.select({ ios: 40, android: 28 }),
+          height: 72,
+          paddingTop: 10,
+          marginLeft: 10,
+          paddingBottom: Platform.select({ ios: 14, android: 12 }),
+          backgroundColor: palette.tabBg,
           borderTopWidth: 0,
+          borderRadius: 28,
           shadowColor: '#000',
-          shadowOffset: { width: 0, height: -2 },
-          shadowOpacity: 0.3,
-          shadowRadius: 4,
-          elevation: 5,
+          shadowOpacity: 0.35,
+          shadowRadius: 12,
+          shadowOffset: { width: 0, height: 6 },
+          elevation: 12,
+          overflow: 'visible', 
         },
 
-        tabBarIconStyle: { marginTop: 2 },
-        tabBarActiveTintColor: '#fff',
-        tabBarInactiveTintColor: 'gray',
-
-        tabBarIcon: ({ color }) => {
-          const name =
-            route.name === 'profile' ? 'person' :
-            route.name === 'history' ? 'time' :
-            route.name === 'statistics' ? 'bar-chart' :
-            route.name === 'startWorkout' ? 'add-circle' :
-            route.name === 'diet' ? 'restaurant' : 'ellipse';
-          return <Ionicons name={name as any} size={24} color={color} />;
+        tabBarItemStyle: {
+          justifyContent: 'center',
+          alignItems: 'center',
+          overflow: 'visible',
         },
       })}
     >
@@ -59,24 +115,14 @@ export default function TabsLayout() {
         name="startWorkout"
         options={{
           title: 'Start Workout',
-          tabBarItemStyle: { flex: 1.35 },
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="add-circle" size={34} color={color} style={{ marginTop: -3 }} />
-          ),
+          tabBarItemStyle: { flex: 1.25 },
+          tabBarIconStyle: { marginTop: -1 }, 
           tabBarLabel: ({ color, focused }) => (
             <Text
-              style={{
-                color,
-                fontFamily: 'Cinzel_600SemiBold', // << her også
-                fontSize: 13,
-                textAlign: 'center',
-                width: '100%',
-                marginTop: 6,
-              }}
+              style={{ color, fontSize: 13, fontWeight: focused ? '600' : '400', marginTop: 2 }}
               numberOfLines={1}
               adjustsFontSizeToFit
               minimumFontScale={0.85}
-              ellipsizeMode="clip"
             >
               Start Workout
             </Text>
@@ -85,7 +131,8 @@ export default function TabsLayout() {
       />
 
       <Tabs.Screen name="statistics" options={{ title: 'Statistics' }} />
-      <Tabs.Screen name="diet" options={{ title: 'Diet' }} />
+      <Tabs.Screen name="friends" options={{ title: 'Friends' }} />
+
       <Tabs.Screen name="index" options={{ href: null }} />
       <Tabs.Screen name="+not-found" options={{ href: null }} />
     </Tabs>

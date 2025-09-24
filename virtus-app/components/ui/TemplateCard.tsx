@@ -7,16 +7,19 @@ import {
   Pressable,
   ImageSourcePropType,
   ViewStyle,
+  StyleSheet as RNStyleSheet,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
+import cardBg from '../../assets/images/card-background.png';
 
 type Exercise = { name: string; icon?: React.ReactNode };
 
 type Props = {
   title: string;
   date?: string | Date;
-  image: ImageSourcePropType;
+  image: ImageSourcePropType; 
+  bgImage?: ImageSourcePropType;
   exercises: Exercise[];
   onPress?: () => void;
   onMorePress?: () => void;
@@ -42,6 +45,7 @@ export default function TemplateCard({
   title,
   date,
   image,
+  bgImage = cardBg,
   exercises,
   onPress,
   onMorePress,
@@ -51,9 +55,8 @@ export default function TemplateCard({
 }: Props) {
   const dateText = fmtDate(date);
 
- // Fordeling af billedet og liste-området
-  const heroH = Math.round(height * 0.58); 
-  const listH = height - heroH;          
+  const heroH = Math.round(height * 0.58);
+  const listH = height - heroH;
 
   return (
     <Pressable
@@ -65,27 +68,22 @@ export default function TemplateCard({
         style,
       ]}
     >
-      {/* Hero-billede */}
+      {/* HERO */}
       <ImageBackground
         source={image}
         style={[styles.hero, { height: heroH }]}
         resizeMode="cover"
         imageStyle={styles.heroImage}
       >
-        {/* Gradient overlay for læsbarhed */}
         <LinearGradient
           colors={['rgba(0,0,0,0.0)','rgba(0,0,0,0.35)','rgba(0,0,0,0.6)']}
           locations={[0, 0.6, 1]}
-          style={StyleSheet.absoluteFillObject}
+          style={RNStyleSheet.absoluteFillObject}
         />
 
-        {/* Header-række: titel + more */}
+        {/* Header: title + more */}
         <View style={styles.headerRow}>
-          <Text
-            style={styles.title}
-            numberOfLines={2}
-            ellipsizeMode="tail"
-          >
+          <Text style={styles.title} numberOfLines={2} ellipsizeMode="tail">
             {title?.toUpperCase()}
           </Text>
 
@@ -94,27 +92,35 @@ export default function TemplateCard({
           </Pressable>
         </View>
 
-        {/* Dato nederst til højre */}
         {!!dateText && (
           <View style={styles.dateRow}>
-            <Ionicons name="time-outline" size={14} color="rgba(255,255,255,0.85)" />
+            <Ionicons name="time-outline" size={14} color="rgba(255,255,255,0.9)" />
             <Text style={styles.dateText}>{dateText}</Text>
           </View>
         )}
       </ImageBackground>
 
-      {/* Liste med øvelser (fast plads til 3 rækker) */}
-      <View style={[styles.listArea, { height: listH }]}>
-        {exercises.slice(0, 3).map((ex, i) => (
-          <View key={`${ex.name}-${i}`} style={[styles.exerciseRow, i < 2 && styles.rowDivider]}>
-            <View style={styles.rowLeft}>
-              {ex.icon ?? <Ionicons name="barbell" size={16} color={palette.gold} />}
+      {/* EXERCISES */}
+      <View style={[styles.listWrap, { height: listH }]}>
+        <ImageBackground
+          source={bgImage}
+          resizeMode="cover"
+          style={[styles.listBgBleed, { height: listH }]}
+        />
+        <View style={styles.listOverlay} />
+
+        <View style={styles.listContent}>
+          {exercises.slice(0, 3).map((ex, i) => (
+            <View key={`${ex.name}-${i}`} style={[styles.exerciseRow, i < 2 && styles.rowDivider]}>
+              <View style={styles.rowLeft}>
+                {ex.icon ?? <Ionicons name="barbell" size={16} color={palette.gold} />}
+              </View>
+              <Text style={styles.exerciseText} numberOfLines={1}>
+                {ex.name?.toUpperCase()}
+              </Text>
             </View>
-            <Text style={styles.exerciseText} numberOfLines={1}>
-              {ex.name?.toUpperCase()}
-            </Text>
-          </View>
-        ))}
+          ))}
+        </View>
       </View>
     </Pressable>
   );
@@ -124,13 +130,13 @@ const styles = StyleSheet.create({
   card: {
     borderRadius: 18,
     overflow: 'hidden',
-    backgroundColor: '#000',
+    backgroundColor: 'transparent',
     shadowColor: '#000',
     shadowOpacity: 0.35,
     shadowRadius: 12,
     shadowOffset: { width: 0, height: 6 },
     elevation: 8,
-    marginTop: 10
+    marginTop: 10,
   },
   cardPressed: {
     shadowOpacity: 0.22,
@@ -139,12 +145,14 @@ const styles = StyleSheet.create({
     elevation: 4,
     transform: [{ translateY: 1 }],
   },
+
   hero: {
     width: '100%',
     overflow: 'hidden',
   },
   heroImage: {
-    alignSelf: 'stretch',
+    borderTopLeftRadius: 18,
+    borderTopRightRadius: 18,
   },
 
   headerRow: {
@@ -157,8 +165,8 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   title: {
-    flex: 1,      
-    flexShrink: 1,    
+    flex: 1,
+    flexShrink: 1,
     fontFamily: 'Cinzel_700Bold',
     fontSize: 20,
     lineHeight: 24,
@@ -190,13 +198,26 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.9)',
   },
 
-  listArea: { 
-    flexShrink: 0,
-    backgroundColor: 'rgba(33,27,18,0.86)',
-    paddingVertical: 8,
-    paddingHorizontal: 10,
+  // ===== Exercises (bund) =====
+  listWrap: {
+    width: '110%',
+    overflow: 'hidden',
+    borderBottomLeftRadius: 18,
+    borderBottomRightRadius: 18,
   },
-
+  listContent: {
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+  },
+  listOverlay: {
+    ...RNStyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0,0,0,0.22)',
+  },
+  listBgBleed: {
+    ...StyleSheet.absoluteFillObject,
+    left: -2,
+    right: -2,
+  },
   exerciseRow: {
     flexDirection: 'row',
     alignItems: 'center',
