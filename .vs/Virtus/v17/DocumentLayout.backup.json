@@ -1,0 +1,168 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|c:\\users\\marti\\onedrive\\dokumenter\\github\\virtus\\virtus.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|solutionrelative:virtus.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|c:\\users\\marti\\onedrive\\dokumenter\\github\\virtus\\virtus.api\\virtus.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|solutionrelative:virtus.api\\virtus.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|c:\\users\\marti\\onedrive\\dokumenter\\github\\virtus\\virtus.api\\virtus.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|solutionrelative:virtus.api\\virtus.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|c:\\users\\marti\\onedrive\\dokumenter\\github\\virtus\\virtus.api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|solutionrelative:virtus.api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|c:\\users\\marti\\onedrive\\dokumenter\\github\\virtus\\virtus.api\\dtos\\workoutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|solutionrelative:virtus.api\\dtos\\workoutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|c:\\users\\marti\\onedrive\\dokumenter\\github\\virtus\\virtus.api\\dtos\\exercisedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|solutionrelative:virtus.api\\dtos\\exercisedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|c:\\users\\marti\\onedrive\\dokumenter\\github\\virtus\\virtus.api\\controllers\\workoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|solutionrelative:virtus.api\\controllers\\workoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|c:\\users\\marti\\onedrive\\dokumenter\\github\\virtus\\virtus.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78094123-9319-4482-A2D8-B57404489CE0}|Virtus.API\\Virtus.API.csproj|solutionrelative:virtus.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Virtus.API\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\Services\\UserService.cs",
+              "RelativeToolTip": "Virtus.API\\Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T22:14:10.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WorkoutDTO.cs",
+              "DocumentMoniker": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\DTOs\\WorkoutDTO.cs",
+              "RelativeDocumentMoniker": "Virtus.API\\DTOs\\WorkoutDTO.cs",
+              "ToolTip": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\DTOs\\WorkoutDTO.cs",
+              "RelativeToolTip": "Virtus.API\\DTOs\\WorkoutDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T22:13:56.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ExerciseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\DTOs\\ExerciseDTO.cs",
+              "RelativeDocumentMoniker": "Virtus.API\\DTOs\\ExerciseDTO.cs",
+              "ToolTip": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\DTOs\\ExerciseDTO.cs",
+              "RelativeToolTip": "Virtus.API\\DTOs\\ExerciseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T22:13:53.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WorkoutController.cs",
+              "DocumentMoniker": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\Controllers\\WorkoutController.cs",
+              "RelativeDocumentMoniker": "Virtus.API\\Controllers\\WorkoutController.cs",
+              "ToolTip": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\Controllers\\WorkoutController.cs",
+              "RelativeToolTip": "Virtus.API\\Controllers\\WorkoutController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAqwEsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T20:48:47.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Virtus.API.csproj",
+              "DocumentMoniker": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\Virtus.API.csproj",
+              "RelativeDocumentMoniker": "Virtus.API\\Virtus.API.csproj",
+              "ToolTip": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\Virtus.API.csproj",
+              "RelativeToolTip": "Virtus.API\\Virtus.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-25T20:09:55.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Virtus.API.http",
+              "DocumentMoniker": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\Virtus.API.http",
+              "RelativeDocumentMoniker": "Virtus.API\\Virtus.API.http",
+              "ToolTip": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\Virtus.API.http",
+              "RelativeToolTip": "Virtus.API\\Virtus.API.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-09-25T20:09:51.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Microsoft.NET.TargetFrameworkInference.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets",
+              "ViewState": "AgIAANoAAAAAAAAAAADwv+4AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-09-25T20:09:31.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Virtus.API\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Virtus.API\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T20:09:19.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\Program.cs",
+              "RelativeDocumentMoniker": "Virtus.API\\Program.cs",
+              "ToolTip": "C:\\Users\\marti\\OneDrive\\Dokumenter\\GitHub\\Virtus\\Virtus.API\\Program.cs",
+              "RelativeToolTip": "Virtus.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T20:09:16.256Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
